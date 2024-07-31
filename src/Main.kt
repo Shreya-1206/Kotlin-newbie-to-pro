@@ -68,6 +68,46 @@ fun main() {
 
     //and is the boss of Or operator
     println(!(number1 == number2 || number1 < number2 && number3 == number4 )) //true
+
+
+    /// IF CONDITIONS ///
+    val x1 =3
+    val x2 = 3
+    val x3 = if(x1 + x2 == 5) 5 else 4
+    if(x1 < x2 || x1*x1 == 5 ){
+        println("One statement is true ")
+    } else if(x1 < x2){
+        println("Both the statement is true")
+    } else {
+        println("None of the statement is true")
+    }
+    println("Here the the value of the x3 is based on condition - $x3")
+
+
+    //check palindrome
+    println(chckPalindrome("hello"))
+    println(chckPalindrome("racecar"))
+    println(chckPalindrome("otto"))
+    println(chckPalindrome("bottle"))
+
+    //// User Input Readline() /////////
+
+    val userAge = readLine()
+    val age = userAge?.toInt() ?: 0
+    if(age < 18){
+        println("You are Not Allowed ")
+    } else if(age >= 18 && age <= 56) {
+        println("Your Welcome here ")
+    } else{
+        println("Sorry Your Too old For this ...")
+    }
+
+    val userSum = readLine()
+    val sum = userSum?.toInt()
+    if(sum != null){
+        println(sum - 5)
+    }
+
 }
   ///Logic volume of sphere
 fun calVolumeOfSphere(radius : Int) : String{
@@ -75,4 +115,15 @@ fun calVolumeOfSphere(radius : Int) : String{
     val pi = Math.PI
     val result = constant * pi*radius*radius*radius
     return "The volume of a sphere with radius $radius is - $result"
+}
+
+ /// Check Palindrome (IF CONDITION))
+fun chckPalindrome(word : String) : String {
+    val reverseWord = word.reversed()
+     if(word == reverseWord) {
+        return "$word is a Palindrome !!!"
+
+     } else {
+         return "${word} is not a Palindrome !!!"
+     }
 }
